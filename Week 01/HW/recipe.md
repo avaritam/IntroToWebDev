@@ -1,5 +1,6 @@
 # Recipe Title (Heading 1)
 ![Food Image](https://placehold.co/400x400)
+
 Brief description, a short paragraph about the food.
 
 ### Information (Heading 3)
