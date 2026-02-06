@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Simple Navbar | Inline-Block</title>
+
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      ul {
+        /* remove all of the bullet points in all unordered lists */
+        list-style-type: none;
+        overflow: hidden;
+        background-color: lavenderblush;
+        /* Inline block workaround for stacking boxes,
+        zero out the font size of parent element of the inline block elements
+        to get rid of the inherent tiny space between letters */
+        font-size: 0;
+      }
+
+      li {
+        /* list items display block by default (each take up a line),
+        we want them to share space so they can stack. we do this by
+        changing it to INLINE-BLOCK */
+        display: inline-block;
+        font-size: 1rem;
+        /* width: 200px; */
+      }
+
+      /* descendant selector for list items */
+      li a {
+        display: block;
+        text-align: center;
+        /* make our anchor tags big and chunky with block and bo model props*/
+        width: 100px;
+        padding: 10px;
+        /* remove the default link styles */
+        color: thistle;
+        text-decoration: none;
+      }
+
+      /* style class active, so active link/page is highlighted*/
+      .active {
+        background-color:ivory;
+      }
+
+      /* hover is a pseudo class selector, it is a particular state of our anchor tags*/
+      /* rgba = rgb alpha, a = transparency */
+      li a:hover {
+        background-color: rgba(0,0,0,0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li>
+            <a class="active" href="#">Link 2</a
+            >
+          </li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
