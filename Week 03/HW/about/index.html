@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Avari's Recipe Archive</title>
+
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: rgb(253, 253, 253);
+      }
+
+      ul {
+        /* remove all of the bullet points in all unordered lists */
+        list-style-type: none;
+        overflow: hidden;
+        background-color: lavenderblush;
+        /* Inline block workaround for stacking boxes,
+        zero out the font size of parent element of the inline block elements
+        to get rid of the inherent tiny space between letters */
+        font-size: 0;
+        display: flex;
+      }
+
+      li {
+        /* list items display block by default (each take up a line),
+        we want them to share space so they can stack. we do this by
+        changing it to INLINE-BLOCK */
+        display: inline-block;
+        font-size: 1rem;
+        /* width: 200px; */
+      }
+
+      /* descendant selector for list items */
+      li a {
+        display: block;
+        text-align: center;
+        /* make our anchor tags big and chunky with block and bo model props*/
+        width: 300px;
+        padding: 20px 10px;
+        /* remove the default link styles */
+        color: rgb(193, 167, 193);
+        text-decoration: none;
+        font-size: larger;
+      }
+
+      /* style class active, so active link/page is highlighted*/
+      .active {
+        background-color: floralwhite;
+        font-weight: bolder;
+      }
+
+      /* hover is a pseudo class selector, it is a particular state of our anchor tags*/
+      /* rgba = rgb alpha, a = transparency */
+      li a:hover {
+        background-color: rgba(0,0,0,0.03);
+      }
+
+      /* Used chatgpt for help to get desired nav layout.*/
+      li:first-child {
+        margin-right: auto;
+      }
+
+      li:first-child a {
+        pointer-events: none;
+        text-align:end;
+        cursor: default;
+      }
+      /* About Section */
+      .about {
+        display: flex;
+        gap: 50px;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-text {
+        width: 30%;
+        text-align: center;
+        color: rgb(193, 167, 193);
+      }
+
+      .about-image {
+        width: 300px;
+        margin-left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Avari's Recipe Archive</a></li>
+          <li>
+            <a class="active" href="#">About</a>
+          </li>
+          <li><a href="../recipes/index.html">Recipes</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="about">
+        <div class="about-text">
+            <h2>Welcome to Avari's Recipe Archive!</h2>
+            </br>
+            <p>
+                This is a collection of my recipes of my favorite foods. These are dishes I either love
+                or grew up loving! The recipe I have chosen is French Toast, which can be found under the Sweet, Baked Good category. I hope you enjoy!
+            </p>
+        </div>
+        <img class="about-image" src="../babySushiPicture.jpg" alt="Baby me eating california roll." width="30%">
+    </section>
+  </body>
+</html>

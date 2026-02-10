@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Avari's Recipe Archive</title>
+
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      ul {
+        /* remove all of the bullet points in all unordered lists */
+        list-style-type: none;
+        overflow: hidden;
+        background-color: lavenderblush;
+        /* Inline block workaround for stacking boxes,
+        zero out the font size of parent element of the inline block elements
+        to get rid of the inherent tiny space between letters */
+        font-size: 0;
+        display: flex;
+      }
+
+      li {
+        /* list items display block by default (each take up a line),
+        we want them to share space so they can stack. we do this by
+        changing it to INLINE-BLOCK */
+        display: inline-block;
+        font-size: 1rem;
+        /* width: 200px; */
+      }
+
+      /* descendant selector for list items */
+      li a {
+        display: block;
+        text-align: center;
+        /* make our anchor tags big and chunky with block and bo model props*/
+        width: 300px;
+        padding: 20px 10px;
+        /* remove the default link styles */
+        color: rgb(193, 167, 193);
+        text-decoration: none;
+        font-size: larger;
+      }
+
+      /* style class active, so active link/page is highlighted*/
+      .active {
+        background-color: floralwhite;
+        font-weight: bolder;
+      }
+
+      /* hover is a pseudo class selector, it is a particular state of our anchor tags*/
+      /* rgba = rgb alpha, a = transparency */
+      li a:hover {
+        background-color: rgba(0,0,0,0.03);
+      }
+
+      /* Used chatgpt for help to get desired nav layout.*/
+      li:first-child {
+        margin-right: auto;
+      }
+
+      li:first-child a {
+        pointer-events: none;
+        text-align:end;
+        cursor: default;
+      }
+
+      .recipeCards {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 50px;
+      }
+
+      .recipeCard {
+        background-color: rgb(255, 253, 248)e;
+        border-radius: 12px;
+        padding: 25px 30px;
+        width: 260px;
+      }
+
+      .recipeCard h2 {
+        color: thistle;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .subcategoryButton {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 10px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 12px;
+        background-color: rgb(255, 253, 248);
+        color: rgb(193, 167, 193);
+        font-size: medium;
+  
+      }
+
+      a {
+        text-decoration: none;
+        color: thistle;
+        display: block;
+        width: 90%;
+        padding: 16px;
+        border-radius: 12px;
+        text-align: center;
+        cursor: pointer;
+        margin: 0 auto;
+        background-color: lavenderblush;
+      }
+
+      .recipeContainer {
+        background-color: rgb(255, 253, 248);
+        max-width: 900px;
+        margin: 40px auto;
+        border-radius: 12px;
+        padding: 30px;
+      }
+
+      .recipeContainer h1 {
+        text-align: center;
+        color: thistle;
+        margin-bottom: 30px;
+      }
+      
+      .recipeGrid {
+        display: grid;
+        grid-template-columns: repeat();
+        gap: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .recipeGrid a {
+        display: block;
+        background-color: lavenderblush;
+        text-align: center;
+        padding: 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: thistle;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Avari's Recipe Archive</a></li>
+          <li>
+            <a href="../../about/index.html">About</a
+            >
+          </li>
+          <li><a class="active" href="#">Recipes</a></li>
+          <li><a href="../../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="recipeCards">
+      <section class="recipeCard">
+        <h2>Savory</h2>
+        <div class="subcategoryButton">
+          <a href="#">Rice Dishes</a>
+          <a href="./savoryNoodle.html">Noodle Dishes</a>
+        </div>
+      </section>
+
+      <section class="recipeCard">
+        <h2>Sweet</h2>
+        <div class="subcategoryButton">
+          <a href="../sweet/sweetBaked.html">Baked Goods</a>
+          <a href="../sweet/sweetCake.html">Cakes</a>
+          <a href="../sweet/sweetMisc.html">Misc</a>
+        </div>
+      </section>
+
+      <section class="recipeCard">
+        <h2>Snacks</h2>
+        <div class="subcategoryButton">
+          <a href="#">Quick & Easy</a>
+          <a href="#">Healthy Bites</a>
+        </div>
+      </section>
+    </main>
+    <section class="recipeContainer">
+        <h1>Rice Dishes</h1>
+        <div class="recipeGrid">
+            <a href="#">Chicken Katsu</a>
+            <a href="#">Chicken Teriyaki</a>
+            <a href="#">Fried Rice</a>
+        </div>
+    </section>
+</html>
