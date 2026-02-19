@@ -1,0 +1,49 @@
+/*Always start with the most generally applicable styles. Then get more specific as you drill down.*/
+/* Zero out edge margins on the page from browser default*/
+html,
+body {
+    margin: 0;
+}
+
+/* Some generic styles for our div elements */
+div {
+    border: 1px solid red;
+    background-color: rgba(255, 150, 50, 0.2);
+}
+
+/* absolute positioned elements without a positioned parent will be positioned in relation to the entire browser window */
+.abs-no-parent-pos {
+    background-color: cornflowerblue;
+    width: 50%;
+    position: absolute;
+    /* go 20% down from the top*/
+    top: 20%;
+    right: 100px;
+}
+
+.rel-parent-pos {
+    width: 50%;
+    height: 200vh;
+    background-color: blueviolet;
+    /* Whenever you want to position something absolutely inside another element, the parent element needs to be positioned relative or any other non static value.*/
+    position: relative;
+    /*right: -300px;*/
+}
+
+.abs-rel-parent-pos {
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+
+header {
+    background-color:crimson;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    /*z-index is position order*/
+    z-index: 10;
+}

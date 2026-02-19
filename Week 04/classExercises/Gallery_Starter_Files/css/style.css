@@ -1,0 +1,191 @@
+/* always load dependancies first - fonts, csss variables, other style sheets */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* generic to specific with our styles*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Kaushan Script", cursive;
+    /* This is where we would declare and use a full sized image background*/
+    background: url("../img/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+/* Main Navigation */
+header {
+    width: 80%;
+    padding: 0 10%;
+    height: 50px;
+    overflow: hidden;
+    background-image: url(../cork-board.webp);
+    position: fixed;
+    z-index: 100;
+    /* Flexbox container properties */
+    /* Flex - stack the next line */
+    display: flex;
+    flex-direction: row;
+    /* Equally space the items */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #ffff;
+    text-shadow: 3px 3px 3px rgba(0,0,0, 0.4);
+}
+
+/* Stack list items horizontally in the nav*/
+nav ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*inside nav*/
+nav li {
+    font-size: 1.25rem;
+    height: 50px;
+    /* center the li inside nav*/
+    line-height: 50px;
+    width: 120px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eeee;
+    display: block;
+    /*any property that changes with animate.
+    transition is the state of the starting property*/
+    transition: all 1s;
+    /*ALWAYS apply transition to starting state.*/
+}
+
+/* since we used transition, these colors will slowly
+load in when hovered on*/
+nav a:hover {
+    color: cadetblue;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav a.active {
+    background-color: black;
+    color:mediumpurple ;
+}
+
+/* Gallery Grid */
+.container {
+    /* we have 9 images and we want it to be 3x3*/
+    width: 900px;
+    margin: 0 auto;
+    /* remember to 0 out the font size of the container.
+    BUT dont forget to bring that font size back in the child*/
+    font-size: 0;
+    padding-top: 100px;
+}
+
+.polaroid {
+    /*minus margin from with*/
+    width: 260px;
+    margin: 20px;
+    /*stacks*/
+    display: inline-block;
+    position: relative;
+}
+
+.polaroid img {
+    /*common design pattern is to never size images themselves,
+    instead we make the image width 100% of its parent and then
+    assign dimensions to the parent.*/
+    width: 100%;
+    /*keep the picture ratio*/
+    height: auto;
+    /*add borders to mimic polariod paper*/
+    border: 10px solid #eeef;
+    border-bottom-width: 45px;
+}
+
+.polaroid p {
+    font-size: 1rem;
+    color: #8888;
+    position: absolute;
+    bottom: 9px;
+    width: 280px;
+    text-align: center;
+}
+
+
+/* TRANSFORMS & TRANSITIONS*/
+.scale_up {
+    transform: scale(1.2);
+    z-index: 50;
+}
+
+.scale_x {
+    transform: scale(2,1);
+}
+
+.scale_y {
+    transform: scaleY(2);
+}
+
+/* SKEW */
+.skew_x {
+    transform: skew(-20deg);
+}
+
+.skew_y {
+    transform: skewY(-20deg);
+}
+
+.skew_both {
+    transform: skew(10deg,30deg);
+}
+
+/*ROTATIONS*/
+.rotate_x {
+    transform: rotateX(120deg);
+}
+
+.rotate_y {
+    transform: rotateY(120deg);
+}
+
+.rotate_z {
+    transform: rotate(120deg);
+}
+
+/*COMBINE TRANSFORMS*/
+.rotate_left {
+    transform: rotateX(-20deg);
+    transition: all 5s ease;
+}
+
+.rotate_left:hover {
+    transform: rotate(20deg);
+    cursor: pointer;
+}
+
+.skew_hover {
+    transform: skewX(-30deg);
+    transition: all 5s ease;
+}
+
+.skew_hover:hover {
+    transform: skewX(30deg);
+}
+
+/* can stack filters but must be same line*/
+.color_swap {
+    filter: grayscale(100%) blur(3px);
+    transition: all 5s ease;
+}
+
+.color_swap:hover {
+    filter: grayscale(0%) blur(0);
+}
