@@ -1,0 +1,169 @@
+/* GLOBAL STYLES */
+
+/* Take into account borders and padding in our set dimensions of any box */
+* {
+    box-sizing: border-box;
+}
+
+/* Zero out annoying margins */
+html, body {
+    margin: 0;
+}
+
+/* Scale images to fit their parent container elements */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop first styling */
+/* JUMBOTRON */
+
+div.hero {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.hero article {
+    position: absolute;
+    bottom: 15%;
+    right: 0;
+    width: 50%;
+    padding: 2rem;
+    background: linear-gradient(to right, rgba(82, 138, 197, 0.75) 0%, rgba(255,0,255,0) 100%);
+}
+
+button, a.info {
+    padding: 0.75rem 2rem;
+    border: 2px solid black;
+    border-radius: 0.75rem;
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    /* Transitions get defined HERE at the starting state */
+    transition: all 1s ease;
+    min-width: 10rem;
+}
+
+button:hover, a.info:hover {
+    background-color: cornflowerblue;
+    color: #333;
+}
+
+/* GALLERY */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumb {
+    position: relative;
+    flex: 0 0 30%;
+    /* Flex grow, flex shrink, flex basis 
+    Flex-grow: 0; -> dont grow to fill space completely, stay the flex-basis size
+    Flex-grow: 1; -> grow to fill space completely at the same rate as the other elements, stay the flex-basis size
+    Flex-grow: 2; -> grow to fill space completely at the 2x the rate as the other elements with 1, stay the flex-basis size
+    
+    Flex-basis --> another way to define width or scale*/
+    overflow: hidden;
+    margin: 1.5rem auto;
+}
+
+/* Prepare our image transform initial state */
+.thumb img {
+    transform: scale(1);
+    transform: rotate(0deg);
+    transition: all 1s ease;
+}
+
+.thumb:hover img{
+    transform: scale(1.5) rotate(-20deg);
+}
+
+
+
+.mask {
+    /* COVER */
+    position: absolute;
+    /* Covers the parent element */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.5);
+    /* CENTER */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* TRANSITIONS */
+    opacity: 0;
+    transition: all 1s ease;
+
+}
+
+.mask h2 {
+    margin: 0;
+}
+
+.mask p {
+    font-style: italic;
+}
+
+.thumb:hover .mask {
+    opacity: 1;
+}
+
+/* Set up inital text scale for transforms and transitions */
+.thumb .mask h2,
+.thumb .mask p,
+.thumb .mask a {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+}
+
+.thumb:hover .mask h2,
+.thumb:hover .mask p,
+.thumb:hover .mask a {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* MEDIA QUERIES */
+/* Desktop first = biggest to smallest with overrides */
+
+/* Tablet size = classic ipad dimensions */
+@media screen and (max-width: 1024px) {
+    .hero article {
+        width: 80%;
+        top: 50%;
+    }
+
+    .thumb {
+        flex-basis: 45%;
+    }
+}
+
+/* Smaller than ipad classic = mobile */
+@media screen and (width < 768px) {
+    .hero article {
+        width: 100%;
+        padding: 1.5rem;
+        bottom: 0;
+    }
+    
+    
+    .container {
+        flex-direction: column;
+        padding: 12px;
+    }
+}

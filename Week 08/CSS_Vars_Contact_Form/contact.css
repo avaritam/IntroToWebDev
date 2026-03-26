@@ -1,0 +1,71 @@
+@import url(var.css);
+
+* {
+        box-sizing: border-box;
+      }
+
+      .body {
+        font-family: var(--ff-body);
+      }
+
+      .h1 {
+        font-family: var(--ff-heading);
+      }
+      .container {
+        width: 50%;
+        margin: 10% auto;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        color: var(--c-text);
+        background-color: var(--c-bg);
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .label-lg {
+        font-size: 2rem;
+      }
+
+      .input-lg {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--c-bttn-text);
+        margin-right: 2rem;
+      }
+
+      .message-area {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+
+      .message {
+        height: 10rem;
+        border-radius: 0.25rem;
+        padding: 1rem;
+      }
+
+      .button-bar {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .btn-dark {
+        width: 100%;
+        margin-top: 2rem;
+        border-radius: 0.25rem;
+        padding: 1rem;
+        border-color: var(--c-bttn-text);
+        color: var(--c-bttn-text);
+        background-color: var(--c-bg-bttn);
+      }
+
+      .btn-dark:hover {
+        background-color: var(--c-bg-bttn-hov);
+      }
