@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ave's faves | avari's portfolio</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('mobile-menu').addEventListener('click', toggleShow)
+      })
+
+      function toggleShow() {
+          var menu = document.getElementById('menu')
+          menu.classList.toggle('show')
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+        <div class="logo">Ave's Faves</div>
+        <div id="mobile-menu" class="mobile-menu">☰</div>
+        <ul id="menu">
+          <li><a href="../index.html">About</a></li>
+
+          <li class="dropdown">
+            <a href="../works/works.html">Works</a>
+            <!-- <ul class="dropdown-menu">
+              <li><a href="../works/graphics.html">Graphics</a></li>
+              <li><a href="../works/photos.html">Photos</a></li>
+            </ul> -->
+          </li>
+
+          <li><a class="active" href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="postcard">
+      <img src="../img/postcard.png" alt="Blank postcard for contact form.">
+      
+      <form class="contact-form">
+        <div class="left">
+          <label for="email-content" class="form-label">Enter Message:</label>
+          <textarea id="email-content" rows="40" placeholder="type your message..."></textarea>
+          <input type="submit" value="Submit">
+        </div>
+
+        <div class="right">
+        <label for="first-name" class="form-label">First Name</label>
+        <input id="first-name" type="text" placeholder="enter first name...">
+
+        <label for="last-name" class="form-label">Last Name</label>
+        <input id="last-name" type="text" placeholder="enter last name...">
+
+        <label for="email" class="form-label">Email Address</label>
+        <input id="email" type="text" placeholder="enter email address...">
+        </div>
+      </form>
+    </div> 
+  </body>

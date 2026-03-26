@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ave's faves | avari's portfolio</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('mobile-menu').addEventListener('click', toggleShow)
+      })
+
+      function toggleShow() {
+          var menu = document.getElementById('menu')
+          menu.classList.toggle('show')
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+        <div class="logo">Ave's Faves</div>
+        <div id="mobile-menu" class="mobile-menu">☰</div>
+        <ul id="menu">
+          <li><a class="active" href="#">About</a></li>
+
+          <li class="dropdown">
+            <a href="./works/works.html">Works</a>
+            <ul class="dropdown-menu">
+              <li><a href="./works/graphics.html">Graphics</a></li>
+              <li><a href="./works/photos.html">Photos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="./contact/contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="file">
+      <input type="checkbox" id="file-open" class="toggle-checkbox">
+      <label for="file-open" class="file-label">
+        <img src="./img/file-close.png" class="file-closed" alt="Closed 'approved' file that says 'your next favarite designer'">
+        <img src="./img/file-open.png" class="file-open" alt="Opened file with information and scrapbook elements.">
+      </label>
+
+      <!-- clickable areas -->
+      <a href="./works/works.html" class="area works"></a>
+      <a href="./contact/contact.html" class="area contact"></a>
+    </div>
+  </body>
