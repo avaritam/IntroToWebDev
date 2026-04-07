@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Random Content</title>
+    <script>
+      // 2 arrays with corresponding content for random picks
+      var arrImg = [
+        'https://images.unsplash.com/photo-1557431177-d277c24390e5?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://media.istockphoto.com/id/173601213/photo/close-up-of-curious-goat-between-fences.jpg?s=1024x1024&w=is&k=20&c=BgnWg5hSt6NKvKJTN08GLfEsFD5oLoCEcn-CYTDrBS8=',
+        'https://images.unsplash.com/photo-1631990206190-8b20560a8d71?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      ]
+
+      var arrLink = [
+        'https://unsplash.com/photos/white-goat-near-pavement-6yPzo6rjNgU',
+        'https://unsplash.com/photos/a-goat-sticking-its-head-over-a-wooden-fence-BjGj8x5cdSk',
+        'https://unsplash.com/photos/a-goat-sticking-its-head-over-a-wooden-fence-BjGj8x5cdSk',
+
+      ]
+
+      // helper function for picking a random number between 0 and max
+      function randomIndex(max){
+        return Math.floor(Math.random() * max)
+      }
+
+      // write our own fucntion outside our event listeners
+      // remember not to call any fucntions that reference any HTMl elements before the DOM loads
+      function loadRandomImage(){
+        // generate a random index
+        var index = randomIndex(arrImg.length)
+        // grab our html elements so we can edit their attributes
+        var img = document.getElementById("animal")
+        var link = document.getElementById("dynLink")
+
+        // assign the src attribute of the image tag to a string from our arrImg sources
+        img.src = arrImg[index]
+        // same for the href in the anchor tag
+        link.href = arrLink[index]
+      }
+
+      // always use an event listener when you are calling functions that ref a html element
+      document.addEventListener("DOMContentLoadedd", function(){
+        loadRandomImage()
+      })
+    </script>
+  </head>
+  <body>
+    <a href="#" id="dynLink" targer="_blank"><img src="" id="animal"/></a>
+  </body>
+</html>
